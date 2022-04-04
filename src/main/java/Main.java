@@ -73,9 +73,15 @@ public class Main {
     }
 
     static boolean checkWin(char dot) {
-        for (int i = 0; i <map.length ; i++) {
-            for (int j = 0; j <map[i].length ; j++) {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
                 if (map[0][i] == dot && i == 2){
+                    return true;
+                }
+                if (map[1][i] == dot && i == 2){
+                    return true;
+                }
+                if (map[2][i] == dot && i == 2){
                     return true;
                 }
             }
@@ -102,10 +108,6 @@ public class Main {
             }
             printMap();
             aiTurn();
-            if (checkWin(AI_DOT)){
-                System.out.println("AI_WIN");
-                break;
-            }
             if (isMapFull()){
                 System.out.println("Ничья");
                 break;
