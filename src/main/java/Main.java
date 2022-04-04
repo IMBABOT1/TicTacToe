@@ -74,33 +74,36 @@ public class Main {
 
 
     static boolean checkWin(char dot) {
-        if (map[0][0] == dot && map[0][1] == dot && map[0][2] == dot) {
-            return true;
-        }
-        if (map[1][0] == dot && map[1][1] == dot && map[1][2] == dot) {
-            return true;
-        }
-        if (map[2][0] == dot && map[2][1] == dot && map[2][2] == dot) {
-            return true;
-        }
+        for (int i = 0; i <map.length ; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                if (map[0][i] == dot && i == 2) {
+                    return true;
+                }
+                if (map[1][i] == dot && i == 2) {
+                    return true;
+                }
+                if (map[2][i] == dot && i == 2) {
+                    return true;
+                }
+                if (map[i][0] == dot && i == 2) {
+                    return true;
+                }
+                if (map[i][1] == dot && i == 2) {
+                    return true;
+                }
+                if (map[i][2] == dot && i == 2) {
+                    return true;
+                }
 
-        if (map[0][0] == dot && map[1][0] == dot && map[2][0] == dot) {
-            return true;
-        }
-        if (map[0][1] == dot && map[1][1] == dot && map[2][1] == dot) {
-            return true;
-        }
-        if (map[0][2] == dot && map[1][2] == dot && map[2][2] == dot) {
-            return true;
-        }
+                if (map[i][i] == dot && i == 2) {
+                    return true;
+                }
+                if (map[0][2] == dot && map[1][1] == dot && map[2][0] == dot) {
+                    return true;
+                }
 
-        if (map[0][0] == dot && map[1][1] == dot && map[2][2] == dot) {
-            return true;
+            }
         }
-        if (map[0][2] == dot && map[1][1] == dot && map[2][0] == dot) {
-            return true;
-        }
-
         return false;
     }
 
