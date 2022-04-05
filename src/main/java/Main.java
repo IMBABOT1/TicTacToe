@@ -1,3 +1,5 @@
+import sun.misc.FloatingDecimal;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -79,49 +81,70 @@ public class Main {
     static boolean checkWin(char dot) {
         int counter = 0;
         for (int i = 0; i <= 2; i++) {
-            if (map[0][i] == dot){
+            if (map[0][i] == dot) {
                 counter++;
-                if (counter == 3){
-                 return true;
-             }
+                if (counter == 3) {
+                    return true;
+                }
             }
-            if (map[1][i] == dot){
+            if (map[1][i] == dot) {
                 counter++;
-                if (counter == 3){
+                if (counter == 3) {
                     return true;
                 }
             }
 
-            if (map[2][i] == dot){
+            if (map[2][i] == dot) {
                 counter++;
-                if (counter == 3){
+                if (counter == 3) {
                     return true;
                 }
             }
         }
-        
+
+        for (int i = 0; i <=2 ; i++) {
+            int counter1 = 0;
+            if (map[i][0] == dot){
+                counter1++;
+                if (counter1 == 3){
+                    return true;
+                }
+            }
+            if (map[i][1] == dot){
+                counter1++;
+                if (counter1 == 3){
+                    return true;
+                }
+            }
+            if (map[i][2] == dot){
+                counter1++;
+                if (counter1 == 3){
+                    return true;
+                }
+            }
+        }
+
+        for (int i = 0; i <= 2; i++) {
+            int counter2 = 0;
+            if(map[i][i] == dot){
+                counter2++;
+                if (counter2 == 3){
+                    return true;
+                }
+            }
+
+            if (map[i][2] == dot && map[i][1] == dot && map[i][0] == dot){
+                return true;
+            }
+        }
 
 
-
-        if (map[0][0] == dot && map[1][0] == dot && map[2][0] == dot) {
-            return true;
-        }
-        if (map[0][1] == dot && map[1][1] == dot && map[2][1] == dot) {
-            return true;
-        }
-        if (map[0][2] == dot && map[1][2] == dot && map[2][2] == dot) {
-            return true;
-        }
-
-        if (map[0][0] == dot && map[1][1] == dot && map[2][2] == dot) {
-            return true;
-        }
-        if (map[0][2] == dot && map[1][1] == dot && map[2][0] == dot) {
-            return true;
-        }
+//
+//            if (map[0][2] == dot && map[1][1] == dot && map[2][0] == dot) {
+//                return true;
+//            }
 
         return false;
-
 }
 
     public static void main(String[] args) {
